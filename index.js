@@ -45,9 +45,11 @@ Use the copy function below to do the following:
     2. Return a copy of the received array  
 */
 
-function copy( /*your code here*/ ) {
-    /*your code here*/
+function copy(originalFlavors) {
+    const copy = (originalFlavors.slice(0));
+    return copy;
 }
+
 
 
 
@@ -64,8 +66,12 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors( /*your code here*/ ) {
-    /*your code here*/
+function is31Flavors(originalFlavors) {
+    for (let i = 0; i < originalFlavors.length; i++) {
+        if (originalFlavors.length === 31) {
+            return true;
+        }
+    }
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -81,8 +87,9 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor( /*your code here*/ ) {
-    /*your code here*/
+function addFlavor(array, str) {
+    array.unshift(str)
+    return array;
 }
 
 
@@ -97,8 +104,9 @@ Use the removeLastFlavor function below to do the following:
     For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor( /*your code here*/ ) {
-    /*your code here*/
+function removeLastFlavor(array) {
+    array.pop();
+    return array;
 }
 
 
@@ -118,7 +126,7 @@ function getFlavorByIndex(array, index) {
     return array[index];
 }
 
-console.log(getFlavorByIndex(`task 5:`, originalFlavors, 3));
+// console.log(getFlavorByIndex(`task 5:`, originalFlavors, 3));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -136,11 +144,16 @@ Use the removeFlavorByName function below to do the following:
     HINT: You can use .splice() for this
 */
 
-function removeFlavorByName( /*your code here*/ ) {
-    /*your code here*/
+function removeFlavorByName(array, str) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].match(str)) {
+            array.splice([i], 1);
+        }
+    }
+    return removeFlavorByName;
 }
 
-
+// removeFlavorByName(originalFlavors, "Rocky Road")
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. 
